@@ -1,0 +1,3 @@
+Call Methods
+
+Getting Page Data = domain.com/v1.0/helper/page_data.php?page=2
