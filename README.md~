@@ -11,4 +11,4 @@ Getting Post Info
 GET : http://api.funnymiku.in/v1.0/post-data.php?postid=[post-id]
 
 Getting Page Nagivation Data
-GET : http://api.funnymiku.in/v1.0/get-navg.php?page=pageno
+GET : http://api.funnymiku.in/v1.0/get-navg.php?page=[page-no]
