@@ -1,3 +1,12 @@
-Call Methods
+Api Created To Get & Put Data In Miku- Website 
 
-Getting Page Data = domain.com/v1.0/helper/page_data.php?page=2
+
+
+Function Usage
+
+Getting Data For A Page Using Page No 
+GET : http://api.funnymiku.in/v1.0/page-data.php?page=1
+
+Getting Post Info 
+GET : http://api.funnymiku.in/v1.0/post-data.php?postid=275476105939521_531786106975185
+
