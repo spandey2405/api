@@ -1,5 +1,6 @@
 <?php
 require 'connect/connect.php';
+require 'conf/conf.php';
 require 'keys/keys.php';
 $data['success'] = 0;
 if(isset($_GET["p"]))
@@ -15,7 +16,7 @@ else
 
 if(isset($_GET["key"]) && isset($_GET["title"]) && isset($_GET["file"]) && isset($_GET["by"]))
 {
-    $type = 'joke';
+    $type = $defaultdata["type"];
     if (isset($_GET["type"]))
     {
         $type = htmlspecialchars($_GET["type"]);

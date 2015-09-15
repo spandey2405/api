@@ -1,0 +1,7 @@
+<?php
+
+$defaultdata["type"]="jokes";
+
+
+?>
+
