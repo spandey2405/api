@@ -1,6 +1,6 @@
 <?php
 require 'connect/connect.php';
-$data['success'] = 0;
+
 if(isset($_GET["p"]))
 {
     $p = htmlspecialchars($_GET["p"]);
@@ -11,13 +11,13 @@ else
 }
 if(isset($_GET["postid"]))
 {
-    $file = htmlspecialchars($_GET["postid"]).".png";
+    $file = htmlspecialchars($_GET["postid"]).".jpeg";
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     $sql = "SELECT * FROM  `funnymiku` WHERE  `filename` =  '$file'";
     $result = mysqli_query($conn, $sql);
     $count = 1;
     if (mysqli_num_rows($result) > 0) {
-        $data['success'] = 1;
+        
         // output data of each row
         while($row = mysqli_fetch_assoc($result)) {
             $data['DATA'] = $row;

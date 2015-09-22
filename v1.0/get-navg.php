@@ -2,7 +2,7 @@
 
 require 'connect/connect.php';
 require 'conf/conf.php';
-$data['success'] = 0;
+
 if(isset($_GET["p"]))
 {
     $p = htmlspecialchars($_GET["p"]);
@@ -22,20 +22,20 @@ if(isset($_GET["page"]))
         $type = htmlspecialchars($_GET["type"]);
     }
     
-    $data['success'] = 1;
+   
     $current_page =  htmlspecialchars($_GET["page"]);
     $no_of_pages = count_folder($type);
     $next = $current_page + 1;
     $prev = $current_page - 1;
     if ($next > $no_of_pages)
     {
-        $next = NULL;
+        $next = 1;
     }
     if ($prev < 1)
     {
-        $prev = NULL;
+        $prev = $no_of_pages;
     }
-    $data["next"] = $next;
+    
     $data["prev"] = $prev;
     if($current_page -3 < 1)
     {
@@ -49,11 +49,12 @@ if(isset($_GET["page"]))
     {
         $start = $current_page - 2;    
     }
-    for($i=0; $i<5;$i++)
+    for($i=1; $i<=5;$i++)
     {
-        $data["PAGE".$i]= $start;
+        $data[$start]= $start;
         $start ++;
     }
+    $data["next"] = $next;
     
 }
 else

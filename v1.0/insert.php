@@ -32,7 +32,7 @@ if(isset($_GET["key"]) && isset($_GET["title"]) && isset($_GET["file"]) && isset
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     $sql = "INSERT INTO `funnymiku`(`title`, `type`, `filename`, `time`, `postedby`) VALUES ('$title','$type','$file',$t,'$by')";
     if (mysqli_query($conn, $sql)) {
-        $checking_folder = json_decode(file_get_contents($url["checkfolder"]));
+        $checking_folder = json_decode(file_get_contents($url["checkfolder"].$type));
         $data["folder-check"]=$checking_folder;
         $makepost = json_decode(file_get_contents($url["makepost"].$file));
         $data["making-folder"]=$makepost;
